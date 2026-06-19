@@ -201,12 +201,16 @@ export default function Navbar() {
 
           {/* Mobile Navigation Trigger */}
           <div className="md:hidden flex items-center space-x-4">
-            <a href={`tel:${CONTACT_INFO.primaryPhone.replace(/\s+/g, "")}`} className="p-2 rounded-lg bg-muted text-primary hover:text-primary-foreground hover:bg-primary transition-all">
+            <a 
+              href={`tel:${CONTACT_INFO.primaryPhone.replace(/\s+/g, "")}`} 
+              className="p-2 rounded-lg bg-muted text-primary hover:text-primary-foreground hover:bg-primary transition-all"
+              aria-label="Call ShreeLabh Consultancy"
+            >
               <Phone className="h-4 w-4" />
             </a>
 
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-              <SheetTrigger render={<Button variant="ghost" size="icon" className="text-foreground" />}>
+              <SheetTrigger render={<Button variant="ghost" size="icon" className="text-foreground" aria-label="Toggle navigation menu" />}>
                 <Menu className="h-6 w-6" />
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[350px] p-6 flex flex-col justify-between">

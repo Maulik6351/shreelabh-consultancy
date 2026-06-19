@@ -16,8 +16,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ShreeLabh Consultancy | Revenue & Tax Consultants",
-  description: "ShreeLabh Consultancy is a premier Revenue & Tax Consultancy firm based in Surat, Gujarat. We specialize in Income Tax, GST, Loans, Revenue Work, and Legal Documentation.",
+  metadataBase: new URL("https://shreelabhconsultancy.com"),
+  title: {
+    default: "ShreeLabh Consultancy | Revenue & Tax Consultants",
+    template: "%s | ShreeLabh Consultancy",
+  },
+  description: "ShreeLabh Consultancy is a premier Revenue & Tax Consultancy firm in Surat, Gujarat. We specialize in Income Tax, GST, Loans, Revenue Work, and Legal Documentation.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "ShreeLabh Consultancy | Revenue & Tax Consultants",
+    description: "ShreeLabh Consultancy is a premier Revenue & Tax Consultancy firm in Surat, Gujarat. We specialize in Income Tax, GST, Loans, Revenue Work, and Legal Documentation.",
+    url: "https://shreelabhconsultancy.com",
+    siteName: "ShreeLabh Consultancy",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ShreeLabh Consultancy | Revenue & Tax Consultants",
+    description: "ShreeLabh Consultancy is a premier Revenue & Tax Consultancy firm in Surat, Gujarat. We specialize in Income Tax, GST, Loans, Revenue Work, and Legal Documentation.",
+  },
 };
 
 import Navbar from "@/components/layout/Navbar";

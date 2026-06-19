@@ -77,7 +77,7 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
       } else {
         toast.error(response.message || "Failed to submit inquiry. Please check details.");
       }
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);

@@ -5,7 +5,6 @@ import { motion, Variants } from "framer-motion";
 import { 
   ShieldCheck, 
   Award, 
-  Users, 
   Phone, 
   Target, 
   Compass, 
@@ -100,7 +99,7 @@ export default function AboutPage() {
               Who We Are
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold font-heading text-slate-900 leading-tight">
-              Surat's Premier Revenue & <br />
+              Surat&apos;s Premier Revenue & <br />
               <span className="text-primary font-black">Taxation Experts</span>
             </h2>
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed">

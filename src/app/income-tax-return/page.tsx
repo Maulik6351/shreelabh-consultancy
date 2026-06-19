@@ -5,7 +5,7 @@ import PageHero from "@/components/shared/PageHero";
 import SectionHeading from "@/components/shared/SectionHeading";
 import ContactForm from "@/components/shared/ContactForm";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import { CheckCircle2, Calendar, FileText, Receipt, ArrowUpRight, Scale } from "lucide-react";
+import { CheckCircle2, FileText } from "lucide-react";
 
 export default function IncomeTaxReturnPage() {
   const breadcrumbs = [

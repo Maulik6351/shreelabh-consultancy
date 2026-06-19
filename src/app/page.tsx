@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { 
   Phone, 
@@ -10,9 +9,7 @@ import {
   MapPin, 
   Clock, 
   Mail, 
-  MessageSquare,
-  ShieldCheck,
-  Star
+  ShieldCheck
 } from "lucide-react";
 
 import SectionHeading from "@/components/shared/SectionHeading";
@@ -41,7 +38,7 @@ const itemVariants: Variants = {
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.5, ease: "easeOut" as any },
+    transition: { duration: 0.5, ease: "easeOut" },
   },
 };
 
