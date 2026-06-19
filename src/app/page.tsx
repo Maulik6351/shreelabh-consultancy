@@ -58,25 +58,11 @@ export default function Home() {
   const cleanPhone = CONTACT_INFO.primaryPhone.replace(/\s+/g, "");
 
   // Interactive Hub State variables
-  const [activeTab, setActiveTab] = React.useState<"tax" | "loan" | "land" | "checklist">("tax");
+  const [activeTab, setActiveTab] = React.useState<"tax" | "loan" | "land">("tax");
   const [taxIncome, setTaxIncome] = React.useState<number>(850000); // Default 8.5L
   const [loanAmount, setLoanAmount] = React.useState<number>(3500000); // Default 35L
   const [loanTenure, setLoanTenure] = React.useState<number>(20); // Default 20 years
   const [landStep, setLandStep] = React.useState<number>(0);
-  const [checklist, setChecklist] = React.useState({
-    itrIncome: true,
-    itrBank: false,
-    gstPan: true,
-    gstAadhaar: false,
-    landDeed: false,
-    landSatbara: false,
-    loanSalary: false,
-    loanItr: false,
-  });
-
-  const handleToggleCheck = (key: keyof typeof checklist) => {
-    setChecklist((prev) => ({ ...prev, [key]: !prev[key] }));
-  };
 
   // Helper formatting function for INR
   const formatINR = (val: number) => {
@@ -133,22 +119,7 @@ export default function Home() {
 
   const emiDetails = calculateEMI(loanAmount, loanTenure);
 
-  // Checklist verification calculations
-  const checkedCount = Object.values(checklist).filter(Boolean).length;
-  const progressPercent = Math.round((checkedCount / 8) * 100);
 
-  const getChecklistStatus = () => {
-    if (progressPercent <= 25) {
-      // Return status details
-      return { text: "Document Gathering", color: "text-amber-400 bg-amber-400/10 border-amber-400/20" };
-    }
-    if (progressPercent <= 75) {
-      return { text: "Almost Ready", color: "text-sky-400 bg-sky-400/10 border-sky-400/20" };
-    }
-    return { text: "Ready to File/Apply!", color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20" };
-  };
-
-  const checklistStatus = getChecklistStatus();
 
   // Gujarat revenue work stages
   const landStages = [
@@ -365,7 +336,6 @@ export default function Home() {
                     { id: "tax", label: "Tax Optimizer", icon: Percent },
                     { id: "loan", label: "EMI Estimator", icon: Coins },
                     { id: "land", label: "Land Tracker", icon: Landmark },
-                    { id: "checklist", label: "Doc Checklist", icon: FileCheck },
                   ].map((chip) => {
                     const ChipIcon = chip.icon;
                     const isSelected = activeTab === chip.id;
@@ -455,8 +425,8 @@ export default function Home() {
                   </div>
 
                   {/* Tabs navigation */}
-                  <div className="grid grid-cols-4 gap-1 bg-white/5 p-1 rounded-xl my-4 text-center">
-                    {(["tax", "loan", "land", "checklist"] as const).map((t) => {
+                  <div className="grid grid-cols-3 gap-1 bg-white/5 p-1 rounded-xl my-4 text-center">
+                    {(["tax", "loan", "land"] as const).map((t) => {
                       const isSelected = activeTab === t;
                       return (
                         <button
@@ -471,7 +441,6 @@ export default function Home() {
                           {t === "tax" && "Tax"}
                           {t === "loan" && "Loan"}
                           {t === "land" && "Land"}
-                          {t === "checklist" && "Files"}
                         </button>
                       );
                     })}
@@ -691,74 +660,7 @@ export default function Home() {
                           </div>
                         )}
 
-                        {/* TAB 4: COMPLIANCE CHECKLIST */}
-                        {activeTab === "checklist" && (
-                          <div className="space-y-3">
-                            <div className="space-y-1">
-                              <h3 className="text-base font-bold text-white flex items-center gap-2">
-                                <FileCheck className="w-4 h-4 text-secondary" />
-                                File Readiness Checklist
-                              </h3>
-                              <p className="text-[11px] text-slate-400">
-                                Tick available documents to assess if your file is ready for processing.
-                              </p>
-                            </div>
 
-                            {/* Checklist grid */}
-                            <div className="grid grid-cols-2 gap-1.5 text-[9px]">
-                              {[
-                                { key: "itrIncome", label: "Salary Slips / Form 16" },
-                                { key: "itrBank", label: "6M Bank Statements" },
-                                { key: "gstPan", label: "PAN & Aadhaar Copies" },
-                                { key: "gstAadhaar", label: "Address Proof" },
-                                { key: "landDeed", label: "Registered Sale Deed" },
-                                { key: "landSatbara", label: "Latest 7/12 Nakal" },
-                                { key: "loanSalary", label: "3M Salary Slips" },
-                                { key: "loanItr", label: "3 Years ITR Receipts" },
-                              ].map((item) => {
-                                const isChecked = (checklist as any)[item.key];
-                                return (
-                                  <button
-                                    key={item.key}
-                                    onClick={() => handleToggleCheck(item.key as any)}
-                                    className={`flex items-center gap-1.5 p-1.5 rounded-lg border text-left transition-all ${
-                                      isChecked
-                                        ? "bg-emerald-500/10 border-emerald-500/30 text-white"
-                                        : "bg-white/5 border-transparent text-slate-400 hover:bg-white/10"
-                                    }`}
-                                  >
-                                    <span
-                                      className={`w-3 h-3 rounded flex items-center justify-center border shrink-0 ${
-                                        isChecked
-                                          ? "bg-emerald-500 border-emerald-500 text-slate-900"
-                                          : "border-slate-600 bg-slate-900"
-                                      }`}
-                                    >
-                                      {isChecked && <CheckCircle className="w-2 h-2 stroke-[3]" />}
-                                    </span>
-                                    <span className="truncate">{item.label}</span>
-                                  </button>
-                                );
-                              })}
-                            </div>
-
-                            {/* Progress bar */}
-                            <div className="space-y-1.5 pt-0.5">
-                              <div className="flex justify-between items-center text-[9px] font-bold text-slate-300">
-                                <span>File Readiness</span>
-                                <span className={`px-1.5 py-0.5 rounded border text-[8px] font-bold ${checklistStatus.color}`}>
-                                  {progressPercent}% - {checklistStatus.text}
-                                </span>
-                              </div>
-                              <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
-                                <div
-                                  className="h-full bg-gradient-to-r from-amber-500 to-emerald-500 transition-all duration-500 ease-out"
-                                  style={{ width: `${progressPercent}%` }}
-                                />
-                              </div>
-                            </div>
-                          </div>
-                        )}
                       </motion.div>
                     </AnimatePresence>
                   </div>
