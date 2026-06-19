@@ -3,35 +3,14 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import { toast } from "sonner";
 import { Send, CheckCircle2, MessageCircle, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CONTACT_INFO } from "@/constants/contactInfo";
-
-// Zod Schema for Validation according to skill.md
-const contactSchema = z.object({
-  fullName: z
-    .string()
-    .min(3, "Name must be at least 3 characters")
-    .max(100, "Name must not exceed 100 characters")
-    .trim(),
-  mobileNumber: z
-    .string()
-    .regex(/^[6-9]\d{9}$/, "Please enter a valid 10-digit Indian mobile number"),
-  email: z
-    .string()
-    .trim()
-    .email("Please enter a valid email address")
-    .or(z.literal("")), // optional but validates if filled
-  service: z.string().min(1, "Please select a service"),
-  message: z.string().max(1000, "Message must not exceed 1000 characters").optional(),
-  honeypot: z.string().max(0, { message: "Spam detected" }).optional(), // Honeypot field
-});
-
-type ContactFormValues = z.infer<typeof contactSchema>;
+import { contactSchema, ContactFormValues } from "@/lib/validations/contact";
+import { sendLead } from "@/app/actions/send-lead";
 
 interface ContactFormProps {
   defaultService?: string;
@@ -84,22 +63,20 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
   const selectedService = watch("service");
 
   const onSubmit = async (data: ContactFormValues) => {
-    // Check honeypot for bots
-    if (data.honeypot) {
-      toast.error("Spam submission blocked.");
-      return;
-    }
-
     setIsSubmitting(true);
 
     try {
-      // Simulate API form submission via Resend / Database
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      // Trigger Next.js Server Action
+      const response = await sendLead(data);
 
-      toast.success("Inquiry submitted successfully!");
-      setSubmittedName(data.fullName);
-      setIsSubmitted(true);
-      reset();
+      if (response.success) {
+        toast.success(response.message || "Inquiry submitted successfully!");
+        setSubmittedName(data.fullName);
+        setIsSubmitted(true);
+        reset();
+      } else {
+        toast.error(response.message || "Failed to submit inquiry. Please check details.");
+      }
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
     } finally {
