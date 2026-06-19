@@ -138,7 +138,7 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
 
       {/* Honeypot field (hidden) */}
       <div className="hidden">
-        <input type="text" {...register("honeypot")} tabIndex={-1} autoComplete="off" />
+        <input type="text" {...register("honeypot")} tabIndex={-1} autoComplete="off" suppressHydrationWarning />
       </div>
 
       <div className="space-y-1">
@@ -226,6 +226,7 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
               }`}
               value={selectedService}
               onChange={(e) => setValue("service", e.target.value, { shouldValidate: true })}
+              suppressHydrationWarning
             >
               <option value="" disabled>Select a Service</option>
               {serviceOptions.map((opt) => (

@@ -116,6 +116,7 @@ export default function Navbar() {
                           ? "text-primary"
                           : "text-foreground/80 hover:text-primary"
                       }`}
+                      suppressHydrationWarning
                     >
                       {link.label}
                       <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
@@ -264,6 +265,7 @@ export default function Navbar() {
                             ? "text-primary"
                             : "text-foreground/80"
                         }`}
+                        suppressHydrationWarning
                       >
                         <span>Services</span>
                         <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isMobileServicesOpen ? "rotate-180" : ""}`} />
