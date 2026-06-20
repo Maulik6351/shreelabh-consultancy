@@ -41,7 +41,7 @@ export default function Footer() {
                 <img
                   src="/logo-thumbnail.png"
                   alt="ShreeLabh Consultancy"
-                  className="h-7 w-auto object-contain"
+                  className="h-10 w-auto object-contain"
                 />
               </div>
             </Link>

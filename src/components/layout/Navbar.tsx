@@ -88,7 +88,7 @@ export default function Navbar() {
                 src="/logo-thumbnail.png"
                 alt="ShreeLabh Consultancy"
                 className={`w-auto object-contain transition-all duration-300 ${
-                  isScrolled ? "h-9" : "h-7"
+                  isScrolled ? "h-11" : "h-10"
                 }`}
               />
             </div>
