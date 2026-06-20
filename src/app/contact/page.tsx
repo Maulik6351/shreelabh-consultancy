@@ -2,13 +2,13 @@
 
 import React from "react";
 
-import { 
-  Phone, 
-  Mail, 
-  MessageCircle, 
-  Clock, 
-  MapPin, 
-  ArrowUpRight 
+import {
+  Phone,
+  Mail,
+  MessageCircle,
+  Clock,
+  MapPin,
+  ArrowUpRight
 } from "lucide-react";
 import PageHero from "@/components/shared/PageHero";
 import SectionHeading from "@/components/shared/SectionHeading";
@@ -24,8 +24,8 @@ export default function ContactPage() {
 
   // Google Maps standard embed URLs
   const mapEmbeds = {
-    branch1: "https://maps.google.com/maps?q=202%20Beel%20Mall%20Varachha%20Main%20Road%20Surat&t=&z=15&ie=UTF8&iwloc=&output=embed",
-    branch2: "https://maps.google.com/maps?q=302%20Martin%20Arcade%20Olpad-Sayan%20Road%20Surat&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    branch1: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.47007674909696!2d72.8544829007637!3d21.211170084770753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e531315d975%3A0x121974c61c9cdcfc!2sShreelabh%20Consultancy!5e0!3m2!1sen!2sin!4v1781938577316!5m2!1sen!2sin",
+    branch2: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d232.3409857780853!2d72.8719868512452!3d21.320139127069265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0483f780db209%3A0x8089c9577318c47!2sSHREELABH%20CONSULTANCY!5e0!3m2!1sen!2sin!4v1781938414119!5m2!1sen!2sin"
   };
 
   return (
@@ -40,7 +40,7 @@ export default function ContactPage() {
       {/* 2. Main Contact Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          
+
           {/* Left Column: Embed ContactForm (Top of grid) */}
           <div className="lg:col-span-7">
             <ContactForm />
@@ -48,13 +48,13 @@ export default function ContactPage() {
 
           {/* Right Column: Contact Details, Business Hours & Direct Actions */}
           <div className="lg:col-span-5 space-y-8">
-            
+
             {/* Quick Connection Options (Floating Action links styled as interactive cards) */}
             <div className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm space-y-4">
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                 Quick Connect
               </span>
-              
+
               <div className="grid grid-cols-1 gap-3">
                 {/* Call Primary */}
                 <a
@@ -140,13 +140,13 @@ export default function ContactPage() {
               <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
                 Expert Helplines
               </span>
-              
+
               <div className="space-y-4 divide-y divide-slate-800">
                 {/* Expert 1 */}
                 <div className="pt-0">
                   <span className="text-xs font-bold text-slate-300 block">{CONTACT_INFO.people[0].name}</span>
                   <span className="text-[10px] text-slate-500 block mt-0.5">{CONTACT_INFO.people[0].role}</span>
-                  <a 
+                  <a
                     href={`tel:${cleanPrimaryPhone}`}
                     className="inline-flex items-center text-sm font-bold text-secondary hover:underline gap-1.5 mt-2 transition-all"
                   >
@@ -159,7 +159,7 @@ export default function ContactPage() {
                 <div className="pt-4">
                   <span className="text-xs font-bold text-slate-300 block">{CONTACT_INFO.people[1].name}</span>
                   <span className="text-[10px] text-slate-500 block mt-0.5">{CONTACT_INFO.people[1].role}</span>
-                  <a 
+                  <a
                     href={`tel:${cleanSecondaryPhone}`}
                     className="inline-flex items-center text-sm font-bold text-secondary hover:underline gap-1.5 mt-2 transition-all"
                   >
@@ -184,7 +184,7 @@ export default function ContactPage() {
           />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
-            
+
             {/* Branch 1 (Main Office) Card */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow">
               <div className="p-6 md:p-8 space-y-6">

@@ -14,14 +14,14 @@ export const CONTACT_INFO = {
     {
       branchName: "Branch 1 (Main Office)",
       isHeadOffice: true,
-      address: "202, Hans Society, Near Somnath Hotel, Above Saurashtra Medical, Baroda Prestige, Varachha Main Road, Surat, Gujarat.",
-      mapLink: "https://maps.app.goo.gl/dbMseoU8NdJhZSTA9"
+      address: "Office No. 202, Above Saurashtra Medical, Near Somnath Hotel, Baroda Prestige, Varachha Main Road, Surat, Gujarat.",
+      mapLink: "https://maps.app.goo.gl/tYrZBpCMR22XLrkv9"
     },
     {
       branchName: "Branch 2",
       isHeadOffice: false,
       address: "302, Maruti Arcade, Delad Patiya, Pariya Gam, Olpad-Sayan Road, Surat, Gujarat.",
-      mapLink: "https://maps.app.goo.gl/LqiCx5dr69jbQoPAA"
+      mapLink: "https://maps.app.goo.gl/551KKJTsRxFCoMXH7"
     }
   ],
   people: [
