@@ -78,18 +78,19 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           
           {/* Logo Section */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-lg bg-primary text-primary-foreground font-bold text-xl shadow-lg transition-transform group-hover:scale-105">
-              SL
-              <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-secondary rounded-full border-2 border-background" />
-            </div>
-            <div className="flex flex-col">
-              <span className={`text-xl font-bold tracking-tight font-heading ${isScrolled ? "text-foreground" : "text-white"}`}>
-                Shree<span className="text-secondary">Labh</span>
-              </span>
-              <span className={`text-[10px] font-medium uppercase tracking-wider -mt-1 ${isScrolled ? "text-muted-foreground" : "text-slate-400"}`}>
-                Consultancy
-              </span>
+          <Link href="/" className="flex items-center group">
+            <div className={`transition-all duration-300 flex items-center justify-center ${
+              isScrolled 
+                ? "bg-transparent shadow-none p-0" 
+                : "bg-white shadow-xl border border-slate-200/20 px-3.5 py-1.5 rounded-xl"
+            }`}>
+              <img
+                src="/logo-thumbnail.png"
+                alt="ShreeLabh Consultancy"
+                className={`w-auto object-contain transition-all duration-300 ${
+                  isScrolled ? "h-9" : "h-7"
+                }`}
+              />
             </div>
           </Link>
 
@@ -225,18 +226,12 @@ export default function Navbar() {
                 <div className="space-y-6">
                   <SheetHeader className="text-left border-b border-border/60 pb-4">
                     <SheetTitle>
-                      <Link href="/" className="flex items-center space-x-2" onClick={() => setIsMobileMenuOpen(false)}>
-                        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-primary text-primary-foreground font-bold text-lg shadow-md">
-                          SL
-                        </div>
-                        <div className="flex flex-col">
-                          <span className="text-lg font-bold tracking-tight text-foreground font-heading">
-                            Shree<span className="text-secondary">Labh</span>
-                          </span>
-                          <span className="text-[9px] font-medium uppercase tracking-wider text-muted-foreground -mt-1">
-                            Consultancy
-                          </span>
-                        </div>
+                      <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
+                        <img
+                          src="/logo-thumbnail.png"
+                          alt="ShreeLabh Consultancy"
+                          className="h-8 w-auto object-contain"
+                        />
                       </Link>
                     </SheetTitle>
                   </SheetHeader>

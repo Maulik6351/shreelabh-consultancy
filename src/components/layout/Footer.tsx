@@ -36,17 +36,13 @@ export default function Footer() {
           
           {/* Column 1: Brand & Intro */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="flex items-center justify-center w-9 h-9 rounded-lg bg-primary text-primary-foreground font-bold text-lg shadow-md">
-                SL
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold tracking-tight text-white font-heading">
-                  Shree<span className="text-secondary">Labh</span>
-                </span>
-                <span className="text-[9px] font-medium uppercase tracking-wider text-slate-400 -mt-1">
-                  Consultancy
-                </span>
+            <Link href="/" className="flex items-center">
+              <div className="bg-white shadow-md border border-slate-200/10 px-3.5 py-1.5 rounded-xl inline-flex items-center justify-center">
+                <img
+                  src="/logo-thumbnail.png"
+                  alt="ShreeLabh Consultancy"
+                  className="h-7 w-auto object-contain"
+                />
               </div>
             </Link>
             <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
