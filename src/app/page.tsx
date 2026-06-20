@@ -676,7 +676,7 @@ export default function Home() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pt-4"
         >
           {services.map((svc) => (
             <motion.div key={svc.title} variants={itemVariants}>
@@ -705,13 +705,13 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 pt-4"
           >
             {whyChooseUs.map((item, index) => (
               <motion.div 
                 key={item.title} 
                 variants={itemVariants}
-                className="bg-white p-8 rounded-3xl border border-slate-100/80 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group"
+                className="bg-white p-5 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100/80 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group"
               >
                 {/* Corner highlight indicator */}
                 <div className="absolute top-0 right-0 w-12 h-12 bg-primary/5 rounded-bl-3xl flex items-center justify-center text-primary font-bold text-xs group-hover:bg-primary group-hover:text-white transition-colors duration-300">
@@ -737,26 +737,23 @@ export default function Home() {
           subtitle="We eliminate bureaucracy and complex legalities, handling your tasks sequentially for maximum convenience."
         />
 
-        <div className="relative pt-8">
+        <div className="relative pt-4 lg:pt-8">
           {/* Connecting line for desktop timeline */}
           <div className="absolute top-1/2 left-4 right-4 h-0.5 bg-slate-200 -translate-y-1/2 hidden lg:block z-0" />
-          
-          {/* Connecting line for mobile vertical timeline */}
-          <div className="absolute top-8 bottom-8 left-7 w-0.5 bg-slate-200 lg:hidden z-0" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8 relative z-10">
             {timelineSteps.map((step) => (
               <div 
                 key={step.step} 
-                className="flex lg:flex-col items-start gap-4 lg:gap-6 bg-white lg:bg-transparent p-5 lg:p-0 rounded-2xl border border-slate-100 lg:border-none shadow-sm lg:shadow-none"
+                className="flex lg:flex-col items-start gap-4 bg-white lg:bg-transparent p-4 lg:p-0 rounded-xl lg:rounded-none border border-slate-100 lg:border-none shadow-sm lg:shadow-none"
               >
                 {/* Number Bubble */}
-                <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg font-heading shadow-lg border-4 border-slate-50 shrink-0 select-none">
+                <div className="w-11 h-11 md:w-14 md:h-14 rounded-full bg-primary text-white flex items-center justify-center font-bold text-base md:text-lg font-heading shadow-lg border-4 border-slate-50 shrink-0 select-none">
                   {step.step}
                 </div>
 
                 <div className="space-y-1.5">
-                  <h3 className="text-base md:text-lg font-bold font-heading text-slate-900 mt-1 lg:mt-0">
+                  <h3 className="text-base md:text-lg font-bold font-heading text-slate-900 mt-0.5 lg:mt-0">
                     {step.title}
                   </h3>
                   <p className="text-xs text-muted-foreground leading-relaxed">
@@ -778,7 +775,7 @@ export default function Home() {
             subtitle="Hear directly from local business owners, home buyers, and salaried professionals in Surat who trust us."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 pt-4">
             {testimonials.map((test) => (
               <TestimonialCard
                 key={test.name}

@@ -123,9 +123,9 @@ export default function MortgageLoanPage() {
             </p>
           </div>
           
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-4 md:space-y-6">
             {categories.map((cat, idx) => (
-              <div key={idx} className="bg-slate-50 p-6 rounded-2xl border border-slate-100/80 shadow-sm">
+              <div key={idx} className="bg-slate-50 p-5 md:p-6 rounded-xl md:rounded-2xl border border-slate-100/80 shadow-sm">
                 <h3 className="text-base font-bold text-slate-900 font-heading mb-2 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-secondary" />
                   {cat.title}
@@ -147,9 +147,9 @@ export default function MortgageLoanPage() {
             title="Why Choose a | Mortgage Loan"
             subtitle="Secure large amounts of capital with flexible terms and interest rates much lower than personal loans."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {benefits.map((benefit, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-100 flex items-start gap-3.5 shadow-sm">
+              <div key={idx} className="bg-white p-4 md:p-6 rounded-xl md:rounded-2xl border border-slate-100 flex items-start gap-3 md:gap-3.5 shadow-sm">
                 <CheckCircle2 className="h-5 w-5 text-emerald-500 shrink-0 mt-0.5" />
                 <span className="text-xs font-bold text-slate-800 leading-relaxed">{benefit}</span>
               </div>
@@ -184,11 +184,11 @@ export default function MortgageLoanPage() {
             title="Required Documents | Mortgage Loan"
             subtitle="Ensure you have the legal property document chain along with income records to fast-track approval."
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {requiredDocuments.map((doc) => (
-              <div key={doc.id} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
+              <div key={doc.id} className="bg-white p-5 md:p-6 rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between">
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900 font-heading border-b border-slate-100 pb-3 mb-4 flex items-center gap-2">
+                  <h4 className="text-sm font-bold text-slate-900 font-heading border-b border-slate-100 pb-2.5 mb-3 md:pb-3 md:mb-4 flex items-center gap-2">
                     <FileText className="w-4 h-4 text-primary" />
                     {doc.title}
                   </h4>

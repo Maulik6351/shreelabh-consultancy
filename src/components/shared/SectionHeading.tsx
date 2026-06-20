@@ -22,7 +22,7 @@ export default function SectionHeading({
   return (
     <div
       className={cn(
-        "max-w-3xl mb-12 md:mb-16",
+        "max-w-3xl mb-8 md:mb-16",
         align === "center" ? "mx-auto text-center" : "text-left",
         className
       )}
@@ -35,7 +35,7 @@ export default function SectionHeading({
       )}
 
       {/* Styled Title with optional highlighted second part */}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-heading text-foreground leading-tight tracking-tight">
+      <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold font-heading text-foreground leading-tight tracking-tight">
         {titleParts[0]}
         {titleParts.length > 1 && (
           <span className="text-secondary ml-2 font-black">{titleParts[1]}</span>

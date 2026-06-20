@@ -224,17 +224,7 @@ export default function Navbar() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[350px] p-6 flex flex-col justify-between bg-white">
                 <div className="space-y-6">
-                  <SheetHeader className="text-left border-b border-border/60 pb-4">
-                    <SheetTitle>
-                      <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-                        <img
-                          src="/logo-thumbnail.png"
-                          alt="ShreeLabh Consultancy"
-                          className="h-8 w-auto object-contain"
-                        />
-                      </Link>
-                    </SheetTitle>
-                  </SheetHeader>
+
 
                   <div className="flex flex-col space-y-4 py-2">
                     <Link
@@ -322,15 +312,15 @@ export default function Navbar() {
                       href={`tel:${CONTACT_INFO.primaryPhone.replace(/\s+/g, "")}`}
                       className="flex items-center text-sm font-semibold text-foreground hover:text-primary py-2 px-3 rounded-lg bg-muted/60"
                     >
-                      <Phone className="h-4 w-4 text-secondary mr-3" />
-                      {CONTACT_INFO.primaryPhone}
+                      <Phone className="h-4 w-4 text-secondary mr-3 shrink-0" />
+                      <span>{CONTACT_INFO.primaryPhone}</span>
                     </a>
                     <a
                       href={`mailto:${CONTACT_INFO.email}`}
-                      className="flex items-center text-sm font-semibold text-foreground hover:text-primary py-2 px-3 rounded-lg bg-muted/60"
+                      className="flex items-center text-sm font-semibold text-foreground hover:text-primary py-2 px-3 rounded-lg bg-muted/60 overflow-hidden"
                     >
-                      <Mail className="h-4 w-4 text-secondary mr-3" />
-                      {CONTACT_INFO.email}
+                      <Mail className="h-4 w-4 text-secondary mr-3 shrink-0" />
+                      <span className="truncate text-xs sm:text-sm">{CONTACT_INFO.email}</span>
                     </a>
                   </div>
                   <Link 

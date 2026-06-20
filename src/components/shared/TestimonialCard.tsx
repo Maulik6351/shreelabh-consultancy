@@ -44,7 +44,7 @@ export default function TestimonialCard({
   const avatarBg = avatarColors[colorIndex];
 
   return (
-    <div className="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between space-y-6">
+    <div className="bg-white p-5 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between space-y-4 md:space-y-6">
       
       {/* Stars and Google logo row */}
       <div className="flex items-center justify-between">
@@ -86,7 +86,7 @@ export default function TestimonialCard({
       </p>
 
       {/* User Information */}
-      <div className="flex items-center gap-3.5 pt-4 border-t border-slate-50">
+      <div className="flex items-center gap-3.5 pt-3 md:pt-4 border-t border-slate-50">
         <div className={`w-10 h-10 rounded-full flex items-center justify-center text-white text-xs font-bold ${avatarBg} shadow-inner`}>
           {initials}
         </div>

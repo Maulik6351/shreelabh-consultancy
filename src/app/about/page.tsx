@@ -195,7 +195,7 @@ export default function AboutPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 pt-4"
           >
             {coreValues.map((value) => {
               const IconComp = value.icon;
@@ -203,12 +203,12 @@ export default function AboutPage() {
                 <motion.div 
                   key={value.title} 
                   variants={itemVariants}
-                  className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
+                  className="bg-white p-5 md:p-8 rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 group"
                 >
-                  <div className={`w-12 h-12 rounded-2xl ${value.bgColor} flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300`}>
-                    <IconComp className={`h-6 w-6 ${value.color}`} />
+                  <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl ${value.bgColor} flex items-center justify-center mb-4 md:mb-6 group-hover:scale-105 transition-transform duration-300`}>
+                    <IconComp className={`h-5 w-5 md:h-6 md:w-6 ${value.color}`} />
                   </div>
-                  <h3 className="text-lg font-bold font-heading text-slate-900 mb-3">
+                  <h3 className="text-base md:text-lg font-bold font-heading text-slate-900 mb-2 md:mb-3">
                     {value.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -254,7 +254,7 @@ export default function AboutPage() {
           subtitle="Direct, personalized advisory from seasoned experts who manage your files and compliance with care."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto pt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto pt-4">
           
           {/* Consultant 1: Vivek Vekariya */}
           <motion.div
@@ -262,9 +262,9 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow"
+            className="bg-white rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow"
           >
-            <div className="p-8 space-y-6">
+            <div className="p-5 md:p-8 space-y-4 md:space-y-6">
               {/* Profile Card Top */}
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center font-black text-xl text-primary font-heading shrink-0">
@@ -293,7 +293,7 @@ export default function AboutPage() {
             </div>
 
             {/* CTA action bottom */}
-            <div className="px-8 py-5 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <div className="px-5 py-4 md:px-8 md:py-5 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
               <span className="text-[10px] font-bold text-slate-400 uppercase">Direct Helpline</span>
               <a 
                 href={`tel:${cleanVivekPhone}`}
@@ -311,9 +311,9 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.15 }}
-            className="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow"
+            className="bg-white rounded-2xl md:rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow"
           >
-            <div className="p-8 space-y-6">
+            <div className="p-5 md:p-8 space-y-4 md:space-y-6">
               {/* Profile Card Top */}
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 rounded-2xl bg-secondary/15 flex items-center justify-center font-black text-xl text-secondary font-heading shrink-0">
@@ -342,7 +342,7 @@ export default function AboutPage() {
             </div>
 
             {/* CTA action bottom */}
-            <div className="px-8 py-5 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <div className="px-5 py-4 md:px-8 md:py-5 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
               <span className="text-[10px] font-bold text-slate-400 uppercase">Direct Helpline</span>
               <a 
                 href={`tel:${cleanPravinPhone}`}
