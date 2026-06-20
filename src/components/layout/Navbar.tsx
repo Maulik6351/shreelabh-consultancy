@@ -215,12 +215,12 @@ export default function Navbar() {
               className="p-2 rounded-lg bg-muted text-primary hover:text-primary-foreground hover:bg-primary transition-all"
               aria-label="Call ShreeLabh Consultancy"
             >
-              <Phone className="h-4 w-4" />
+              <Phone className="h-5 w-5" />
             </a>
 
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger render={<Button variant="ghost" size="icon" className={isScrolled ? "text-foreground" : "text-white"} aria-label="Toggle navigation menu" />}>
-                <Menu className="h-6 w-6" />
+                <Menu className="h-7 w-7" />
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[350px] p-6 flex flex-col justify-between bg-white">
                 <div className="space-y-6">

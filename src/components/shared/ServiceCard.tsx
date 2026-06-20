@@ -42,15 +42,18 @@ export default function ServiceCard({ title, description, icon, href }: ServiceC
       <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl md:rounded-t-3xl bg-transparent group-hover:bg-primary transition-all duration-300" />
       
       <div className="space-y-3 md:space-y-4">
-        {/* Icon container */}
-        <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-slate-50 text-primary border border-slate-100 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-inner">
-          {iconMap[icon] || <FileText className="h-5 w-5 md:h-6 md:w-6" />}
-        </div>
+        {/* Icon & Title container: row on mobile, stacked on desktop */}
+        <div className="flex items-center gap-3 md:block md:space-y-4">
+          {/* Icon container */}
+          <div className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-slate-50 text-primary border border-slate-100 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300 shadow-inner shrink-0">
+            {iconMap[icon] || <FileText className="h-5 w-5 md:h-6 md:w-6" />}
+          </div>
 
-        {/* Title */}
-        <h3 className="text-lg md:text-xl font-bold font-heading text-slate-900 group-hover:text-primary transition-colors">
-          {title}
-        </h3>
+          {/* Title */}
+          <h3 className="text-base sm:text-lg md:text-xl font-bold font-heading text-slate-900 group-hover:text-primary transition-colors">
+            {title}
+          </h3>
+        </div>
 
         {/* Description */}
         <p className="text-xs text-muted-foreground leading-relaxed">

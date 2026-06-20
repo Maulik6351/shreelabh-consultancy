@@ -131,7 +131,7 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="bg-white p-8 md:p-10 rounded-3xl border border-border/80 shadow-2xl shadow-slate-100/50 space-y-6 relative overflow-hidden"
+      className="bg-white px-4 py-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl border border-border/80 shadow-2xl shadow-slate-100/50 space-y-6 relative overflow-hidden"
     >
       {/* Decorative accent top line */}
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-primary via-secondary to-primary/40" />

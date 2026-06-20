@@ -327,31 +327,33 @@ export default function Home() {
 
 
 
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
+              <div className="flex flex-row items-center gap-2 pt-2">
                 <a
                   href="#contact"
                   onClick={handleScrollToContact}
                   className={buttonVariants({
                     variant: "default",
-                    size: "lg",
-                    className: "w-full sm:w-auto font-bold shadow-xl shadow-secondary/10 bg-secondary hover:bg-secondary/90 text-slate-900 border border-secondary transition-all flex items-center justify-center group"
+                    className: "flex-1 font-bold shadow-xl shadow-secondary/10 bg-secondary hover:bg-secondary/90 text-slate-900 border border-secondary transition-all flex items-center justify-center group text-xs sm:text-sm py-2.5 sm:py-3 h-auto"
                   })}
                 >
-                  Get Free Consultation
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <span>
+                    <span className="hidden sm:inline">Get </span>Free Consultation
+                  </span>
+                  <ArrowRight className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-1 shrink-0" />
                 </a>
 
                 <a
                   href={`tel:${cleanPhone}`}
                   className={buttonVariants({
                     variant: "outline",
-                    size: "lg",
-                    className: "w-full sm:w-auto font-bold text-white border-white/20 bg-transparent hover:bg-white/10 hover:text-white transition-all shadow-md flex items-center justify-center backdrop-blur-sm"
+                    className: "flex-1 font-bold text-white border-white/20 bg-transparent hover:bg-white/10 hover:text-white transition-all shadow-md flex items-center justify-center backdrop-blur-sm text-xs sm:text-sm py-2.5 sm:py-3 h-auto"
                   })}
                 >
-                  <Phone className="mr-2 h-4 w-4 text-secondary animate-pulse" />
-                  Call {CONTACT_INFO.primaryPhone}
+                  <Phone className="mr-1.5 h-3.5 w-3.5 text-secondary animate-pulse shrink-0" />
+                  <span>
+                    <span className="sm:hidden">Call Now</span>
+                    <span className="hidden sm:inline">Call {CONTACT_INFO.primaryPhone}</span>
+                  </span>
                 </a>
               </div>
 
@@ -802,7 +804,7 @@ export default function Home() {
 
       {/* 8. Contact CTA Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24" id="contact">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-slate-50 p-8 md:p-12 lg:p-16 rounded-[40px] border border-slate-100 shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 bg-slate-50 px-4 py-8 sm:p-8 md:p-12 lg:p-16 rounded-3xl sm:rounded-[40px] border border-slate-100 shadow-sm">
           
           {/* Left Details */}
           <div className="lg:col-span-5 space-y-8 flex flex-col justify-between">
