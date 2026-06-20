@@ -70,7 +70,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-md py-3"
+          ? "bg-white/95 backdrop-blur-md border-b border-border shadow-md py-3"
           : "bg-transparent py-5"
       }`}
     >
@@ -222,7 +222,7 @@ export default function Navbar() {
               <SheetTrigger render={<Button variant="ghost" size="icon" className={isScrolled ? "text-foreground" : "text-white"} aria-label="Toggle navigation menu" />}>
                 <Menu className="h-6 w-6" />
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-6 flex flex-col justify-between">
+              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-6 flex flex-col justify-between bg-white">
                 <div className="space-y-6">
                   <SheetHeader className="text-left border-b border-border/60 pb-4">
                     <SheetTitle>
