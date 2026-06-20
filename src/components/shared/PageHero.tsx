@@ -1,6 +1,4 @@
 import React from "react";
-import Link from "next/link";
-import { ChevronRight, Home } from "lucide-react";
 
 interface BreadcrumbItem {
   label: string;
@@ -30,34 +28,6 @@ export default function PageHero({
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-4 max-w-3xl">
-          
-          {/* Breadcrumbs Navigation */}
-          {breadcrumbs.length > 0 && (
-            <nav className="flex items-center space-x-2 text-xs text-slate-400 font-medium tracking-wide">
-              <Link 
-                href="/" 
-                className="flex items-center hover:text-secondary transition-colors"
-              >
-                <Home className="h-3.5 w-3.5 mr-1" />
-                Home
-              </Link>
-              {breadcrumbs.map((crumb) => (
-                <React.Fragment key={crumb.label}>
-                  <ChevronRight className="h-3 w-3 text-slate-600" />
-                  {crumb.href ? (
-                    <Link 
-                      href={crumb.href} 
-                      className="hover:text-secondary transition-colors"
-                    >
-                      {crumb.label}
-                    </Link>
-                  ) : (
-                    <span className="text-secondary font-semibold">{crumb.label}</span>
-                  )}
-                </React.Fragment>
-              ))}
-            </nav>
-          )}
 
           {/* Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black font-heading text-white tracking-tight leading-tight">

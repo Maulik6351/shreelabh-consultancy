@@ -125,7 +125,7 @@ export default function IncomeTaxReturnPage() {
   ];
 
   return (
-    <div className="space-y-24 md:space-y-32">
+    <div className="space-y-12 md:space-y-16">
       {/* 1. Page Hero */}
       <PageHero
         title="Income Tax Return Filing"
@@ -169,7 +169,7 @@ export default function IncomeTaxReturnPage() {
       </section>
 
       {/* 3. Benefits Section */}
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
+      <section className="py-12 md:py-16 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Why Us"
@@ -206,7 +206,7 @@ export default function IncomeTaxReturnPage() {
       </section>
 
       {/* 5. Required Documents Checklist Section */}
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
+      <section className="py-12 md:py-16 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Checklist A.Y. 2026-27"

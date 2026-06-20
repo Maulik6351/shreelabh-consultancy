@@ -286,7 +286,7 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-24 md:space-y-32">
+    <div className="space-y-12 md:space-y-16">
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-primary/45 text-white pt-24 pb-20 md:pt-36 md:pb-32">
         {/* Subtle grid pattern background */}
@@ -325,37 +325,7 @@ export default function Home() {
                 Income Tax, GST, Home Loans, Land Revenue &amp; Legal Deeds under one roof. We guide individuals and businesses in Surat, Gujarat with 100% transparency.
               </p>
 
-              {/* Quick portal links indicator */}
-              <div className="space-y-3 pt-2">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400 block flex items-center gap-1.5">
-                  <Sparkles className="w-3 h-3 text-secondary animate-pulse" />
-                  Explore Interactive Calculators:
-                </span>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    { id: "tax", label: "Tax Optimizer", icon: Percent },
-                    { id: "loan", label: "EMI Estimator", icon: Coins },
-                    { id: "land", label: "Land Tracker", icon: Landmark },
-                  ].map((chip) => {
-                    const ChipIcon = chip.icon;
-                    const isSelected = activeTab === chip.id;
-                    return (
-                      <button
-                        key={chip.id}
-                        onClick={() => setActiveTab(chip.id as any)}
-                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all border ${
-                          isSelected
-                            ? "bg-secondary text-slate-950 border-secondary shadow-md shadow-secondary/15"
-                            : "bg-white/5 hover:bg-white/10 text-slate-300 border-white/5"
-                        }`}
-                      >
-                        <ChipIcon className="w-3.5 h-3.5" />
-                        {chip.label}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
+
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row items-center gap-4 pt-2">
@@ -377,7 +347,7 @@ export default function Home() {
                   className={buttonVariants({
                     variant: "outline",
                     size: "lg",
-                    className: "w-full sm:w-auto font-bold text-white border-white/20 hover:bg-white/10 hover:text-white transition-all shadow-md flex items-center justify-center backdrop-blur-sm"
+                    className: "w-full sm:w-auto font-bold text-white border-white/20 bg-transparent hover:bg-white/10 hover:text-white transition-all shadow-md flex items-center justify-center backdrop-blur-sm"
                   })}
                 >
                   <Phone className="mr-2 h-4 w-4 text-secondary animate-pulse" />
@@ -722,7 +692,7 @@ export default function Home() {
       </section>
 
       {/* 4. Why Choose Us */}
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
+      <section className="py-12 md:py-16 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Why Choose Us"
@@ -800,7 +770,7 @@ export default function Home() {
       </section>
 
       {/* 6. Testimonials */}
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
+      <section className="py-12 md:py-16 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Client Feedback"

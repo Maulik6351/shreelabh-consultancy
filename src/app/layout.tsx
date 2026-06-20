@@ -56,8 +56,8 @@ export default function RootLayout({
       >
         <div className="flex flex-col min-h-screen">
           <Navbar />
-          {/* pt-20 pushes page down below fixed header; pb-16 prevents mobile sticky bar from hiding bottom of page content */}
-          <main className="flex-grow pt-20 pb-16 md:pb-0">
+          {/* pb-16 prevents mobile sticky bar from hiding bottom of page content */}
+          <main className="flex-grow pb-16 md:pb-0">
             {children}
           </main>
           <Footer />

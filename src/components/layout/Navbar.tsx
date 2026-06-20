@@ -84,10 +84,10 @@ export default function Navbar() {
               <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-secondary rounded-full border-2 border-background" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xl font-bold tracking-tight text-foreground font-heading">
+              <span className={`text-xl font-bold tracking-tight font-heading ${isScrolled ? "text-foreground" : "text-white"}`}>
                 Shree<span className="text-secondary">Labh</span>
               </span>
-              <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground -mt-1">
+              <span className={`text-[10px] font-medium uppercase tracking-wider -mt-1 ${isScrolled ? "text-muted-foreground" : "text-slate-400"}`}>
                 Consultancy
               </span>
             </div>
@@ -113,8 +113,8 @@ export default function Navbar() {
                         pathname.startsWith("/business-loan") ||
                         pathname.startsWith("/revenue") ||
                         pathname.startsWith("/legal")
-                          ? "text-primary"
-                          : "text-foreground/80 hover:text-primary"
+                          ? (isScrolled ? "text-primary" : "text-secondary")
+                          : (isScrolled ? "text-foreground/80 hover:text-primary" : "text-slate-300 hover:text-secondary")
                       }`}
                       suppressHydrationWarning
                     >
@@ -173,7 +173,9 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className={`text-sm font-semibold transition-colors py-2 ${
-                    isActive ? "text-primary border-b-2 border-primary" : "text-foreground/80 hover:text-primary"
+                    isActive 
+                      ? (isScrolled ? "text-primary border-b-2 border-primary" : "text-secondary border-b-2 border-secondary") 
+                      : (isScrolled ? "text-foreground/80 hover:text-primary" : "text-slate-300 hover:text-secondary")
                   }`}
                 >
                   {link.label}
@@ -184,7 +186,12 @@ export default function Navbar() {
 
           {/* Desktop Right CTA Section */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href={`tel:${CONTACT_INFO.primaryPhone.replace(/\s+/g, "")}`} className="flex items-center text-sm font-semibold text-foreground hover:text-primary transition-colors">
+            <a 
+              href={`tel:${CONTACT_INFO.primaryPhone.replace(/\s+/g, "")}`} 
+              className={`flex items-center text-sm font-semibold transition-colors ${
+                isScrolled ? "text-foreground hover:text-primary" : "text-slate-300 hover:text-secondary"
+              }`}
+            >
               <Phone className="h-4 w-4 text-secondary mr-2" />
               {CONTACT_INFO.primaryPhone}
             </a>
@@ -211,7 +218,7 @@ export default function Navbar() {
             </a>
 
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-              <SheetTrigger render={<Button variant="ghost" size="icon" className="text-foreground" aria-label="Toggle navigation menu" />}>
+              <SheetTrigger render={<Button variant="ghost" size="icon" className={isScrolled ? "text-foreground" : "text-white"} aria-label="Toggle navigation menu" />}>
                 <Menu className="h-6 w-6" />
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[350px] p-6 flex flex-col justify-between">

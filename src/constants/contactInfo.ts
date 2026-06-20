@@ -14,14 +14,14 @@ export const CONTACT_INFO = {
     {
       branchName: "Branch 1 (Main Office)",
       isHeadOffice: true,
-      address: "202, Beel Mall, Hans Society Na Nake, Near Somnath Hotel, Above Saurashtra Medical, Baroda Prestige, Varachha Main Road, Surat, Gujarat.",
-      mapLink: "https://maps.google.com/?q=202+Beel+Mall+Varachha+Main+Road+Surat"
+      address: "202, Hans Society, Near Somnath Hotel, Above Saurashtra Medical, Baroda Prestige, Varachha Main Road, Surat, Gujarat.",
+      mapLink: "https://maps.app.goo.gl/dbMseoU8NdJhZSTA9"
     },
     {
       branchName: "Branch 2",
       isHeadOffice: false,
-      address: "302, Martin Arcade, Delad Patiya, Pariya Gam, Olpad-Sayan Road, Surat, Gujarat.",
-      mapLink: "https://maps.google.com/?q=302+Martin+Arcade+Olpad-Sayan+Road+Surat"
+      address: "302, Maruti Arcade, Delad Patiya, Pariya Gam, Olpad-Sayan Road, Surat, Gujarat.",
+      mapLink: "https://maps.app.goo.gl/LqiCx5dr69jbQoPAA"
     }
   ],
   people: [

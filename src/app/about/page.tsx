@@ -75,7 +75,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="space-y-24 md:space-y-32">
+    <div className="space-y-12 md:space-y-16">
       {/* 1. Page Hero */}
       <PageHero
         title="About ShreeLabh Consultancy"
@@ -182,7 +182,7 @@ export default function AboutPage() {
       </section>
 
       {/* 3. Core Values Grid */}
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
+      <section className="py-12 md:py-16 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Our Pillars"

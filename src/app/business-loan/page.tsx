@@ -96,7 +96,7 @@ export default function BusinessLoanPage() {
   ];
 
   return (
-    <div className="space-y-24 md:space-y-32">
+    <div className="space-y-12 md:space-y-16">
       {/* 1. Page Hero */}
       <PageHero
         title="Business Loan Syndication"
@@ -140,7 +140,7 @@ export default function BusinessLoanPage() {
       </section>
 
       {/* 3. Benefits Section */}
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
+      <section className="py-12 md:py-16 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Funding Advantages"
@@ -177,7 +177,7 @@ export default function BusinessLoanPage() {
       </section>
 
       {/* 5. Required Documents Section */}
-      <section className="py-20 bg-slate-50 border-y border-slate-100">
+      <section className="py-12 md:py-16 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             badge="Checklist"
